@@ -16,6 +16,7 @@ contract MultiSigWallet{
     mapping(uint256 => mapping(address => bool)) public confirmed;
     event TransactionSubmit(uint256 indexed id, address indexed sender,address indexed to,uint256 value,bytes data);
     event ConfirmTransaction(address indexed _owner,uint256 indexed _id);
+    event ExecuteTransaction(uint256 indexed _txId);
     constructor(address[] memory _owners,uint256 _required){
         require(_owners.length > 0 , "no Owners");
         require(_required > 0 && _required <= _owners.length,"check the required Owners number");
@@ -62,5 +63,14 @@ contract MultiSigWallet{
         TransactionToConfirm.numConfirmations += 1;
         confirmed[_txId][msg.sender] = true;
         emit ConfirmTransaction(msg.sender, _txId);
+    }
+
+    function executeTransaction(uint _txId) public onlyOwner txExists(_txId) notExecuted(_txId){
+        Transaction storage TransactionToExecute = transactions[_txId];
+        require(TransactionToExecute.numConfirmations >= required,"still need owners to execute");
+        TransactionToExecute.executed = true;
+        (bool callSuccess, ) = payable(TransactionToExecute.to).call{value : TransactionToExecute.value}(TransactionToExecute.data);
+        require(callSuccess,"call failed");
+        emit ExecuteTransaction(_txId);
     }
 }

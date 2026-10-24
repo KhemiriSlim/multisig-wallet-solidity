@@ -46,6 +46,19 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
+						"name": "_txId",
+						"type": "uint256"
+					}
+				],
+				"name": "ExecuteTransaction",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					},
@@ -112,6 +125,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_txId",
+						"type": "uint256"
+					}
+				],
+				"name": "executeTransaction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -260,11 +286,11 @@
 	},
 	"sources": {
 		"MultiSigWallet.sol": {
-			"keccak256": "0x89d46e40a2e8f88632256f0b50fc3362e65979eceb641c2ab283eacf5187615e",
+			"keccak256": "0xc1fa85b70293c67b0695e137d1b9e4819e8cd17e23f34e5b22e57e3bc9c29f08",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0019646fa9896e52c030638535a9af15cf44b94f452f797701b5acc0911b5396",
-				"dweb:/ipfs/QmQcYkdk2UmFTecW5J47DaJ16R2dVV72WEudLXNVNRw1cS"
+				"bzz-raw://9b030bae62c342978cd8c5e26c700aff7f04eb6832fece70d9e9e7b057a5d4fd",
+				"dweb:/ipfs/QmaLKeWkCNW6MQyg4w8QffyH7fqP2RYVUKK58H6EmGXpN5"
 			]
 		}
 	},
