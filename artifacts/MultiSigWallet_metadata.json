@@ -59,6 +59,19 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
+						"name": "_txId",
+						"type": "uint256"
+					}
+				],
+				"name": "RevokeConfirmation",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					},
@@ -194,6 +207,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_txId",
+						"type": "uint256"
+					}
+				],
+				"name": "revokeConfirmation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_to",
 						"type": "address"
@@ -271,7 +297,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"MultiSigWallet.sol": "MultiSigWallet"
+			"MultiSigWallet1.sol": "MultiSigWallet"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -285,12 +311,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"MultiSigWallet.sol": {
-			"keccak256": "0xc1fa85b70293c67b0695e137d1b9e4819e8cd17e23f34e5b22e57e3bc9c29f08",
+		"MultiSigWallet1.sol": {
+			"keccak256": "0xf088140ee5938f7ca4d411031544a6538701899275da4ecf5462912007c8ac64",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9b030bae62c342978cd8c5e26c700aff7f04eb6832fece70d9e9e7b057a5d4fd",
-				"dweb:/ipfs/QmaLKeWkCNW6MQyg4w8QffyH7fqP2RYVUKK58H6EmGXpN5"
+				"bzz-raw://e746a47d338a407dda129cf493ad310aa04a5566c1f80bf61fc0d560307722a5",
+				"dweb:/ipfs/Qmbnanck7HZrZCKjAAytKEHne5UwKEXXKQBVf8x6BrRu27"
 			]
 		}
 	},
